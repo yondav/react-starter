@@ -1,0 +1,67 @@
+{
+  "env": {
+    "es2021": true,
+    "node": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "project": "tsconfig.eslint.json",
+    "sourceType": "module"
+  },
+  "ignorePatterns": [
+    "bin",
+    "build",
+    "lib",
+    "node_modules",
+    "*.json",
+    "yarn.*",
+    ".*",
+    "LICENSE"
+  ],
+  "extends": ["airbnb-base", "prettier"],
+  "overrides": [
+    {
+      "files": ["**/*.{ts,tsx}"],
+      "plugins": ["@typescript-eslint", "prettier"],
+      "extends": [
+        "airbnb",
+        "eslint-config-airbnb-typescript-prettier",
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "plugin:import/typescript",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking"
+      ],
+      "settings": {
+        "import/resolver": {
+          "typescript": {
+            "project": "tsconfig.eslint.json"
+          }
+        }
+      },
+      "rules": {
+        "no-console": ["warn", { "allow": ["warn", "error"] }],
+        "import/prefer-default-export": "off",
+        "@typescript-eslint/consistent-type-imports": "error",
+        "import/order": [
+          "error",
+          {
+            "alphabetize": {
+              "order": "asc"
+            },
+            "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
+            "newlines-between": "always",
+            "warnOnUnassignedImports": true
+          }
+        ]
+      }
+    },
+    {
+      "files": ["**/*.{test,spec}.{js,jsx,ts,tsx}"],
+      "env": { "jest": true },
+      "plugins": ["jest"],
+      "extends": ["plugin:jest/recommended", "plugin:jest/style"]
+    }
+  ]
+}
