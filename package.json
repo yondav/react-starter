@@ -17,6 +17,19 @@
     "typescript",
     "webpack"
   ],
+  "author": {
+    "name": "Yoni David",
+    "email": "yoni@yondav.us",
+    "url": "https://yondav.us"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yondav/react-starter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yondav/react-starter/issues",
+    "email": "yoni@yondav.us"
+  },
   "bin": {
     "@yondav/react-starter": "./bin/create-react-starter"
   },
